@@ -1,0 +1,51 @@
+* {
+    accent: #dc322f;
+    dark: #252525;
+    dark-trasparent: #252525dd;
+    light: #e8e8ec;
+
+    font: "Fontawesome 36";
+    background-color: transparent;
+    text-color: @light;
+    margin: 0;
+    margin-bottom: 0;
+    margin-top: 0;
+    spacing: 0;
+}
+
+#listview {
+    spacing: 0;
+    scrollbar: false;
+    margin: 0;
+    dynamic: true;
+    layout: horizontal;
+}
+
+#window {
+    trasparency: "real";
+    fullscreen: true;
+    background-color: #282c34dd;
+    border-radius: 0px;
+}
+
+#mainbox {
+    border: 0;
+    padding: 45% 0 0 40%;
+}
+
+#element {
+    padding: 25px;
+    border: 0 0 1 0;
+}
+
+#element.selected.normal {
+    text-color: @accent;
+    border-radius: 0px;
+
+    border: 0;
+    border-color: @dark;
+}
+
+#inputbar {
+    children: [];
+}

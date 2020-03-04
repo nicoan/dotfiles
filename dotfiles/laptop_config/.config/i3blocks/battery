@@ -1,0 +1,44 @@
+#!/bin/bash
+BATTERY_INFO=$(acpi -b)
+STATUS=$(echo -n $BATTERY_INFO | cut -d ',' -f1 | cut -d ':' -f2 | xargs)
+REMAINING_TIME=$(echo -n $BATTERY_INFO | cut -d ',' -f3 | awk '{print substr($0,1,6) }' | xargs)
+PERCENT=$(echo -n $BATTERY_INFO | cut -d',' -f2)
+NUMBER_PERCENT=$(echo "${PERCENT//%}")
+
+function get_battery_icon {
+	if [ "$STATUS" = "Charging" ]; then
+		echo -n ""
+	elif [ "$STATUS" = "Discharging" ]; then
+		if [ $NUMBER_PERCENT -gt 75 ]; then
+			echo -n ""
+		elif [ $NUMBER_PERCENT -gt 50 ]; then
+			echo -n ""
+		elif [ $NUMBER_PERCENT -gt 25 ]; then
+			echo -n ""
+		elif [ $NUMBER_PERCENT -gt 10 ]; then
+			echo -n ""
+		else
+			echo -n ""
+		fi
+	elif [ "$STATUS" = "Not charging" ]; then
+		echo -n ""
+	elif [ "$STATUS" = "Full" ]; then
+		echo -n ""
+	else
+		echo -n ""
+	fi
+}
+
+function get_battery_text {
+	if [ "$STATUS" = "Not charging" ]; then
+		echo -n "Full"
+	elif [ "$STATUS" = "Full" ]; then
+		echo -n "Full"
+	elif [ "$STATUS" = "Unknown" ]; then
+		echo -n "Unknown status"
+	else
+		echo -n "$PERCENT ($REMAINING_TIME)"
+	fi
+}
+
+echo -n "<span font_desc='Ubuntu 10'>  $(get_battery_icon) $(get_battery_text)  </span>"

@@ -1,0 +1,33 @@
+! === rofi ===
+
+rofi.modi:                           ssh,window,drun,run
+! rofi.sidebar-mode:                   true
+rofi.opacity:                        90
+rofi.columns:                        1
+rofi.font:                           Ubuntu 11
+rofi.fg:                             #686a70
+rofi.bg:                             #15171d
+rofi.hlfg:                           #FFFFFF
+rofi.hlbg:                           #4f3a77
+rofi.bc:                             #4f3a77
+rofi.hide-scrollbar:                 true
+! ! State:           'bg',     'fg',     'bgalt',  'hlbg',   'hlfg'
+! rofi.color-normal: #5294E2,  #FFFFFF,  #353944,  #FFFFFF,  #FFFFFF
+! rofi.terminal:                       termite
+! rofi.ssh-client:                     ssh
+! rofi.ssh-command:                    {terminal} -e "{ssh-client} {host}"
+! rofi.color-window: argb: EE000000, argb: EE000000, argb: EE000000
+! rofi.color-normal: argb: 00000000, #DEDEDE, argb: 00000000, #DEDEDE
+!
+! !                  'background', 'border'
+! rofi.color-window: #353944,      #404552
+! rofi.bw:                             10
+! rofi.location:                       0
+! rofi.padding:                        10
+! rofi.levenshtein-sort:               true
+! rofi.case-sensitive:                 false
+! rofi.fuzzy:                          false
+! rofi.line-margin:                    2
+! rofi.separator-style:                solid
+! rofi.markup-rows:                    false
+! rofi.scrollbar-width:                8

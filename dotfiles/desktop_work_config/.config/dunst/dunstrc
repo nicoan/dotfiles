@@ -1,0 +1,44 @@
+[global]
+    font = "Ubuntu 8"
+    markup = yes
+    format = "<b>%s</b>\n%b"
+    sort = yes
+    indicate_hidden = yes
+    alignment = center
+    bounce_freq = 0
+    show_age_threshold = 60
+    word_wrap = yes
+    ignore_newline = no
+    geometry = "250x10-6+30"
+    transparency = 15
+    idle_threshold = 120
+    monitor = 0
+    sticky_history = yes
+    line_height = 0
+    separator_height = 2
+    padding = 15
+    horizontal_padding = 15
+    separator_color = "#585858"
+    startup_notification = false
+    icon_position = left
+    max_icon_size=60
+
+[shortcuts]
+    close = ctrl+space
+    close_all = ctrl+shift+space
+    context = ctrl+shift+period
+
+[urgency_low]
+    background = "#15171d"
+    foreground = "#dde1f0"
+    timeout = 5
+
+[urgency_normal]
+    background = "#15171d"
+    foreground = "#FFFFFF"
+    timeout = 10
+
+[urgency_critical]
+    background = "#15171d"
+    foreground = "#dc322f"
+    timeout = 0

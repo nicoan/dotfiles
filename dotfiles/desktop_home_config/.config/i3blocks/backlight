@@ -1,0 +1,4 @@
+#!/bin/bash
+BACKLIGHT_NUM=$(xbacklight | cut -d '.' -f1)
+
+echo -n "<span font_desc='Ubuntu 10'>    $BACKLIGHT_NUM  </span>"
