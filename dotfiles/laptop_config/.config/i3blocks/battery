@@ -41,4 +41,4 @@ function get_battery_text {
 	fi
 }
 
-echo -n "<span font_desc='Ubuntu 10'>  $(get_battery_icon) $(get_battery_text)  </span>"
+echo -n "<span font_desc='Ubuntu 10'>   $(get_battery_icon) $(get_battery_text)   </span>"

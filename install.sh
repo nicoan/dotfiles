@@ -16,6 +16,7 @@ if [ "$1" != "sudo" ]; then
   CURRENT_DIR=`pwd`
   FONT_DIR=$HOME/.fonts/
   CONFIG_DIR=$HOME/.config/
+  EXECUTABLES_DIR=$HOME/.bin/
 
   # Create directories
   echo "Creating directories..."
@@ -27,11 +28,16 @@ if [ "$1" != "sudo" ]; then
     mkdir "$CONFIG_DIR"
   fi
 
+  if [ ! -d "$EXECUTABLES_DIR" ]; then
+    mkdir "$EXECUTABLES_DIR"
+  fi
+
   # Copy configs
   echo "Copyting resources and configs..."
   cp -rf "$CURRENT_DIR/$DEVICE_CONFIG_DIR/.config/." "$HOME/.config/"
   cp "$CURRENT_DIR/$DEVICE_CONFIG_DIR/.Xresources" "$HOME/.Xresources"
   cp "$CURRENT_DIR/$DEVICE_CONFIG_DIR/.bashrc" "$HOME/.bashrc"
+  cp -rf "$CURRENT_DIR/.bin/." "$EXECUTABLES_DIR"
   bash "$CURRENT_DIR/fonts/install.sh"
 
   # Execution and ownerships of useful scripts
@@ -44,6 +50,7 @@ if [ "$1" != "sudo" ]; then
     sudo "$0" "$@" "sudo"
     exit $?
   fi
+
 else
   # Programs
   echo "Installing packages..."
@@ -65,6 +72,7 @@ else
     git \
     vim \
     htop \
+    xcowsay \
 
   # i3-gaps
   bash ./i3-gaps.sh

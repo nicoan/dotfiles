@@ -1,0 +1,8 @@
+#!/bin/bash
+## run while loop to display date and hostname on screen ##
+while [ : ]
+do
+    xcowsay "Levantate 5 min."
+    sleep 60m 
+done
+

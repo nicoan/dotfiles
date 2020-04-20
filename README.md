@@ -17,3 +17,5 @@ The install script is made for debian-based systems (with apt) with Gnome instal
   - Dmenu configuration
   - Rofi configuration
 
+## Screenshot
+![Preview](https://raw.githubusercontent.com/nicoan/dotfiles/master/screen.png)
