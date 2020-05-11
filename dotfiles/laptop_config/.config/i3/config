@@ -190,7 +190,8 @@ assign [class="Google-chrome"] $workspace2
 assign [class="Code"] $workspace3
 assign [class="jetbrains-studio"] $workspace3
 assign [class="jetbrains-idea-ce"] $workspace3
-assign [class="whatsdesk"] $workspace7
+assign [class="Rambox"] $workspace7
+assign [class="rambox"] $workspace7
 assign [class="zoom"] $workspace8
 assign [class="Slack"] $workspace9
 
@@ -308,12 +309,12 @@ exec_always compton -b --dbus
 # Autoexec applications
 exec --no-startup-id $HOME/.config/i3/gnome_ssh_keyring.sh
 exec --no-startup-id /usr/bin/gnome-keyring-daemon --start --components=secrets
-exec --no-startup-id whatsdesk
+exec --no-startup-id rambox 
 exec --no-startup-id mailspring -b
 exec --no-startup-id firefox
-exec --no-startup-id google-chrome-stable --password-store=gnome
 exec --no-startup-id slack
-exec --no-startup-id standReminder
+exec --no-startup-id redshift 
+exec --no-startup-id $HOME/.bin/standReminder
 exec gnome-settings-daemon
 
 # Change wallapaper
