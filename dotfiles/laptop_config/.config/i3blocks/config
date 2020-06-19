@@ -63,6 +63,7 @@ border=#6c71c4
 command=~/.config/i3blocks/updates
 interval=3600
 markup=pango
+signal=12
 separator=false
 border=#A054A3
 

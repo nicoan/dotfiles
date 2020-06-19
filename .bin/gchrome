@@ -1,4 +1,4 @@
 #!/bin/bash
 
-google-chrome-stable --password-store=gnome &
+google-chrome-stable --password-store=gnome &> /dev/null &
 
