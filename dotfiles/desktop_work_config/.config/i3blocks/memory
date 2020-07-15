@@ -3,5 +3,5 @@
 FREE_MEMORY=`free | grep Mem | awk '{ printf("%.2f\n", $3 / (1024 * 1024)) }'`
 TOTAL_MEMORY=`free | grep Mem | awk '{ printf("%.0f\n", $2 / (1024 * 1024)) }'`
 
-echo "<span font_desc='Ubuntu 10'>   $FREE_MEMORY Gb / $TOTAL_MEMORY Gb  </span>"
+echo "<span font_desc='Ubuntu 10'>   $FREE_MEMORY Gb / $TOTAL_MEMORY Gb   </span>"
 

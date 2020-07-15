@@ -51,6 +51,14 @@ markup=pango
 separator=false
 border=#6c71c4
 
+[updates]
+command=~/.config/i3blocks/updates
+interval=3600
+markup=pango
+signal=12
+separator=false
+border=#A054A3
+
 # Date Time
 [time]
 command=echo "<span font_desc='Ubuntu 10'>   $(date '+%H:%M')   </span>"

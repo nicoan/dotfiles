@@ -84,7 +84,7 @@ URxvt.url-launcher:             /usr/bin/firefox
 URxvt.matcher.button:           1
 ! Change keybinding for copy/paste
 URxvt*iso14755:                 false
-URxvt.letterSpace:              -1
+! URxvt.letterSpace:              -1
 URxvt.lineSpace:                2
 URxvt*cursorUnderline:      false
 URxvt*cursorBlink:          true
