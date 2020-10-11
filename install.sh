@@ -73,6 +73,7 @@ else
     vim \
     htop \
     xcowsay \
+    deboprhan \
 
   # i3-gaps
   bash ./i3-gaps.sh

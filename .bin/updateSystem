@@ -12,8 +12,8 @@ apt update
 apt upgrade -y
 
 # Cleanup
-apt remove -y --purge
 bash $HOME/.bin/removeSnaps
+bash $HOME/.bin/cleanupDeb
 
 # Notify i3blocks the update is done
 pkill -RTMIN+12 i3blocks

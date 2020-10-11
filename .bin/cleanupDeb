@@ -1,0 +1,10 @@
+#!/bin/bash
+# Ask for sudo
+if [ $EUID != 0 ]; then
+    sudo "$0" "$@"
+    exit $?
+fi
+
+#Cleanup packages
+apt remove -y --purge
+deborphan | xargs apt remove -y --purge
