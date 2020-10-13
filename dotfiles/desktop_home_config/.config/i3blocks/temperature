@@ -1,4 +1,4 @@
 #!/bin/bash
 TEMPERATURE=$(sensors | grep temp1 | sed -n 1p | sed 's:\s\+:\t:g' | cut -f2 | cut -c2-)
 
-echo -n "<span font_desc='Ubuntu 10'>    $TEMPERATURE  </span>"
+echo -n "<span font_desc='Comfortaa Bold 10'>    $TEMPERATURE   </span>"

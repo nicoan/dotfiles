@@ -70,19 +70,21 @@ tx_rate=$(( $tx_diff / $time_diff ))
 # 1024^2 = 1048576, then display MiB/s instead
 
 # incoming
+echo -n "IN "
 rx_kib=$(( $rx_rate >> 10 ))
 if [[ "$rx_rate" -gt 1048576 ]]; then
-  IN=$(printf '%s Mb' "`echo "scale=1; $rx_kib / 1024" | bc`")
+  printf '%sM' "`echo "scale=1; $rx_kib / 1024" | bc`"
 else
-  IN=$(echo -n "${rx_kib} Kb")
+  echo -n "${rx_kib}K"
 fi
+
+echo -n " "
 
 # outgoing
+echo -n "OUT "
 tx_kib=$(( $tx_rate >> 10 ))
 if [[ "$tx_rate" -gt 1048576 ]]; then
-  OUT=$(printf '%s Mb' "`echo "scale=1; $tx_kib / 1024" | bc`")
+  printf '%sM' "`echo "scale=1; $tx_kib / 1024" | bc`"
 else
-  OUT=$(echo -n "${tx_kib} Kb")
+  echo -n "${tx_kib}K"
 fi
-
-echo -n "<span font_desc='Comfortaa Bold 10'>    $IN  ~   $OUT  </span>"

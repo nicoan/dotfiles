@@ -59,7 +59,6 @@ else
     rxvt-unicode \
     rxvt-unicode-256color \
     compton \
-    rofi \
     feh \
     scrot \
     lm-sensors \
@@ -76,19 +75,25 @@ else
     deboprhan \
 
   # i3-gaps
-  bash ./i3-gaps.sh
+  bash ./installers/i3gaps.sh
 
   # i3-blocks gaps
-  bash ./i3blocks-gaps.sh
+  bash ./installers/i3blocks_gaps.sh
 
   # i3lock-color
-  bash ./i3lock-color.sh
+  bash ./installers/i3lock_color.sh
 
   # GTK Theme
-  bash ./gtk-theme.sh
+  bash ./installers/gtk_theme.sh
 
   # Icons theme
-  bash ./icon-theme.sh
+  bash ./installers/icon_theme.sh
+
+  # Rofi
+  bash ./installers/rofi.sh
+
+  # Tryone compton 
+  bash ./installers/tryone_compton.sh
 
   # Done
   echo "It's done! :)"

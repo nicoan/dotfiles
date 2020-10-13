@@ -14,7 +14,7 @@ set $mod Mod4
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
 #font pango:monospace 8
-font pango:Font Awesome 5, Source Code Pro for Powerline, 11
+font pango:Font Awesome 5, Comfortaa, 12
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
@@ -39,8 +39,9 @@ bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
 #bindsym $mod+d exec dmenu_run -b -nb '$light_black' -sf '#eeeeee' -sb '$dark_violet' -nf '#bbbbbb'
-bindsym $mod+Shift+d exec rofi -show run -theme themes/onedark.rasi
-bindsym $mod+d exec rofi -show drun -theme themes/onedark.rasi
+bindsym $mod+Shift+d exec ~/.config/rofi/scripts/runmenu.sh
+bindsym $mod+d exec ~/.config/rofi/scripts/appsmenu.sh
+
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
@@ -103,7 +104,7 @@ set $white              #FFFFFF
 set $dark_red           #8d0033
 set $red                #dc322f
 set $dark_violet        #4f3a77
-set $violet             #6c71c4
+set $violet             #728cbb
 set $dark_grey          #43454d
 set $light_grey         #d7d7d7
 set $grey               #686a70
@@ -114,12 +115,12 @@ set $grey               #686a70
 set $workspace1 "1:"
 set $workspace2 "2:"
 set $workspace3 "3:"
-set $workspace4 "4:𝟰"
-set $workspace5 "5:𝟱"
-set $workspace6 "6:𝟲"
-set $workspace7 "7:𝟳"
-set $workspace8 "8:𝟴"
-set $workspace9 "9:"
+set $workspace4 "4:❹"
+set $workspace5 "5:❺"
+set $workspace6 "6:❻"
+set $workspace7 "7:❼"
+set $workspace8 "8:❽"
+set $workspace9 "9:"
 set $workspace10 "10:"
 
 # switch to workspace
@@ -157,6 +158,11 @@ bindsym XF86AudioPause exec playerctl pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
+# Gaps
+gaps outer 5
+gaps inner 5
+smart_gaps on
+
 # Screenshots
 # Multi-screen screenshots with scrot
 bindsym --release Print exec scrot 'Screenshot_%Y%m%d_%H%M%S.png' -e 'mkdir -p ~/Pictures/screenshots && mv $f ~/Pictures/screenshots && xclip -selection clipboard -t image/png -i ~/Pictures/screenshots/`ls -1 -t ~/Pictures/screenshots | head -1`' # All screens
@@ -179,7 +185,10 @@ assign [class="Google-chrome"] $workspace2
 assign [class="Code"] $workspace3
 assign [class="jetbrains-studio"] $workspace3
 assign [title="^Android Emulator -"] $workspace4
-assign [class="whatsdesk"] $workspace9
+assign [class="jetbrains-idea-ce"] $workspace3
+assign [class="Rambox"] $workspace9
+assign [class="rambox"] $workspace9
+assign [class="zoom"] $workspace8
 
 # Move to workspace
 for_window [class="Spotify"] move to workspace $workspace10
@@ -191,12 +200,19 @@ for_window [class="^Rofi"] floating enable
 for_window [title="^Android Emulator -"] floating enable
 for_window [class="^pavucontrol"] floating enable
 for_window [class="^Pavucontrol"] floating enable
+for_window [class="^gnome-calculator"] floating enable
+for_window [class="^Gnome-calculator"] floating enable
 
 # Window borders
 for_window [title="^Android Emulator -"] border normal 2
 for_window [class="^pavucontrol"] border normal 2
 for_window [class="^Pavucontrol"] border normal 2
 
+# Tabbed window
+for_window [class = "Firefox"] layout tabbed
+for_window [class = "Google-chrome"] layout tabbed
+
+# Menues
 bindsym $mod+q exec "$HOME/.config/rofi/scripts/powermenu.sh"
 
 # Scracthpad
@@ -293,8 +309,8 @@ workspace $workspace3 output DVI-D-0
 workspace $workspace4 output DVI-D-0
 workspace $workspace5 output DVI-D-0
 workspace $workspace6 output DVI-D-0
-workspace $workspace7 output DVI-D-0
-workspace $workspace8 output DVI-D-0
+workspace $workspace7 output DP-4
+workspace $workspace8 output DP-4
 workspace $workspace9 output DP-4
 workspace $workspace10 output DP-4
 
@@ -311,7 +327,7 @@ exec xrandr --output DP-4 --mode 1280x1024
 exec_always --no-startup-id /usr/lib/gnome-settings-daemon/gsd-xsettings
 
 # Composite
-exec_always compton -b --dbus
+exec_always compton --config $HOME/.config/compton/compton.conf -b --dbus 
 
 # Autolock service
 # exec xautolock -detectsleep -time 5 -locker $HOME/.config/i3/lock_and_blur.sh \
@@ -321,8 +337,16 @@ exec_always compton -b --dbus
 # Autoexec applications
 exec --no-startup-id $HOME/.config/bash-imports/gnome_ssh_keyring.sh
 exec --no-startup-id /usr/bin/gnome-keyring-daemon --start --components=secrets
-exec --no-startup-id whatsdesk
-exec --no-startup-id google-chrome-stable --password-store=gnome
+exec --no-startup-id rambox 
+exec --no-startup-id mailspring -b
+exec --no-startup-id firefox
+exec --no-startup-id gtk-redshift 
+exec --no-startup-id $HOME/.bin/standReminder
+exec gnome-settings-daemon
 
 # Change wallapaper
 exec --no-startup-id feh --randomize --bg-fill $HOME/Pictures/Wallpapers/*
+
+# Select default workspaces
+exec --no-startup-id i3-msg workspace $workspace1 
+exec --no-startup-id i3-msg workspace $workspace9

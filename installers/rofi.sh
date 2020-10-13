@@ -7,7 +7,8 @@ if [ $EUID != 0 ]; then
 fi
 
 
-git clone --recursive https://github.com/davatorium/rofi /tmp/rofi
+# git clone --recursive --depth 1 --branch 1.5.4 https://github.com/davatorium/rofi /tmp/rofi
+git clone --recursive --depth 1 https://github.com/davatorium/rofi /tmp/rofi
 cd /tmp/rofi
 autoreconf -i
 mkdir build 

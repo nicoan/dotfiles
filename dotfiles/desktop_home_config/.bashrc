@@ -115,6 +115,8 @@ if [ -n "$force_color_prompt" ]; then
     fi
 fi
 
+PATH="$HOME/.bin:$PATH"
+
 # #################
 #      Prompt
 # #################
@@ -128,7 +130,7 @@ PS1="\n\[\e[0;34m\]┌─[\[\e[1;36m\u\e[1;35m\]@\[\e[1;36m\]${HOSTNAME%%.*}\[\e
 export SCRIPTS_DIR=$HOME/.config/i3blocks
 
 # Bash configurations
-source $HOME/.config/bash-imports/local-npm-modules.sh
 source $HOME/.config/bash-imports/git-aliases.sh
+source $HOME/.config/bash-imports/aliases.sh
 source $HOME/.config/bash-imports/android.sh
 source $HOME/.config/bash-imports/gnome_ssh_keyring.sh
