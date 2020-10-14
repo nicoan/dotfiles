@@ -21,4 +21,4 @@ if [ ! "$updates" -eq "0" ] && [ ! "$security_updates" -eq "0" ]; then
 fi
 
 
-echo -n "<span font_desc='Ubuntu 10'> $updates_text$separator$security_updates_text </span>"
+echo -n "<span font_desc='Comfortaa Bold 10'> $updates_text$separator$security_updates_text </span>"

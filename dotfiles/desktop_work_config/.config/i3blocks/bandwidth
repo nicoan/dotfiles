@@ -85,4 +85,4 @@ else
   OUT=$(echo -n "${tx_kib} Kb")
 fi
 
-echo -n "<span font_desc='Ubuntu 10'>    $IN  ~   $OUT  </span>"
+echo -n "<span font_desc='Comfortaa Bold 10'>    $IN  ~   $OUT  </span>"

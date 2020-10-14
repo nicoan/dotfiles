@@ -130,8 +130,11 @@ PS1="\n\[\e[0;34m\]┌─[\[\e[1;36m\u\e[1;35m\]@\[\e[1;36m\]${HOSTNAME%%.*}\[\e
 export SCRIPTS_DIR=$HOME/.config/i3blocks
 
 # Bash configurations
-source $HOME/.config/bash-imports/local-npm-modules.sh
 source $HOME/.config/bash-imports/git-aliases.sh
 source $HOME/.config/bash-imports/aliases.sh
 source $HOME/.config/bash-imports/android.sh
 source $HOME/.config/bash-imports/gnome_ssh_keyring.sh
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion

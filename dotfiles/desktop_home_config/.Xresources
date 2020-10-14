@@ -14,8 +14,8 @@
 
 !*font:          xft:Source Code Pro for Powerline:size=11,style=regular
 
-URxvt.font:     xft:Ubuntu Mono derivative Powerline:size=11:antialias=true
-URxvt.boldFont: xft:Ubuntu Mono derivative Powerline:bold:size=11:antialias=true
+URxvt.font:     xft:Source Code Pro for Powerline:size=10:antialias=true
+URxvt.boldFont: xft:Source Code Pro for Powerline:bold:size=10:antialias=true
 
 ! === Colours ===
 
@@ -92,4 +92,4 @@ URxvt*cursorBlink:          true
 ! True trasparency
 urxvt*depth: 32
 !urxvt*background: rgba:0000/0000/0000/eeee
-urxvt*background: rgba:1400/1c00/2100/cccc
+urxvt*background: rgba:1400/1c00/2100/bbbb

@@ -14,4 +14,4 @@ function get_volume_icon {
   fi
 }
 
-echo -n "<span font_desc='Ubuntu 10'>  $(get_volume_icon)  $VOLUME_PERCENT   </span>"
+echo -n "<span font_desc='Comfortaa Bold 10'>  $(get_volume_icon)  $VOLUME_PERCENT   </span>"

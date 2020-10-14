@@ -8,3 +8,4 @@ fi
 #Cleanup packages
 apt remove -y --purge
 deborphan | xargs apt remove -y --purge
+apt autoremove -y --purge
