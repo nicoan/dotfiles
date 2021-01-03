@@ -1,22 +1,22 @@
 #!/bin/bash
-IFS=';' read updates security_updates < <(/usr/lib/update-notifier/apt-check 2>&1)
+IFS=';' read updates security_updates < <(python3 $HOME/.config/i3blocks/apt-check.py 2>&1)
 
-if [ "$updates" -eq "0" ] && [ "$security_updates" -eq "0" ]; then
+if [[ "$updates" -eq "0" ]] && [[ "$security_updates" -eq "0" ]]; then
     exit 0
 fi
 
 updates_text=""
-if [ ! "$updates" -eq "0" ]; then
+if [[ ! "$updates" -eq "0" ]]; then
     updates_text="   $updates "
 fi
 
 security_updates_text=""
-if [ ! "$security_updates" -eq "0" ]; then
+if [[ ! "$security_updates" -eq "0" ]]; then
     security_updates_text=" $security_updates "
 fi
 
 separator=""
-if [ ! "$updates" -eq "0" ] && [ ! "$security_updates" -eq "0" ]; then
+if [[ ! "$updates" -eq "0" ]] && [[ ! "$security_updates" -eq "0" ]]; then
     separator=" ~ "
 fi
 

@@ -16,7 +16,7 @@ if [ "$1" != "sudo" ]; then
   CURRENT_DIR=`pwd`
   FONT_DIR=$HOME/.fonts/
   CONFIG_DIR=$HOME/.config/
-  EXECUTABLES_DIR=$HOME/.bin/
+  EXECUTABLES_DIR=$HOME/.local/bin/
 
   # Create directories
   echo "Creating directories..."
@@ -37,6 +37,7 @@ if [ "$1" != "sudo" ]; then
   cp -rf "$CURRENT_DIR/$DEVICE_CONFIG_DIR/.config/." "$HOME/.config/"
   cp "$CURRENT_DIR/$DEVICE_CONFIG_DIR/.Xresources" "$HOME/.Xresources"
   cp "$CURRENT_DIR/$DEVICE_CONFIG_DIR/.bashrc" "$HOME/.bashrc"
+  cp "$CURRENT_DIR/$DEVICE_CONFIG_DIR/.profile" "$HOME/.profile"
   cp -rf "$CURRENT_DIR/.bin/." "$EXECUTABLES_DIR"
   bash "$CURRENT_DIR/fonts/install.sh"
 
@@ -53,16 +54,19 @@ if [ "$1" != "sudo" ]; then
 
 else
   # Programs
+
+  # APT
   echo "Installing packages..."
+  apt-get update
   apt-get install -y xclip \
     rxvt \
-    rxvt-unicode \
-    rxvt-unicode-256color \
     compton \
     feh \
     scrot \
     lm-sensors \
     redshift \
+    gtk-redshift \
+    alsa-utils \
     pavucontrol \
     xautolock \
     xbacklight \
@@ -72,7 +76,26 @@ else
     vim \
     htop \
     xcowsay \
-    deboprhan \
+    build-essential \
+    shtool \
+    curl\
+    snap \
+    wget \
+    ripgrep \
+    udiskie \
+    lxpolkit \
+
+  # Snaps
+  snap install core
+
+  snap install keepasssxc
+  snap disconnect keepassxc:network :network
+  snap disconnect keepassxc:network-bind :network-bind
+
+  snap install rambox
+  snap install thunderbird
+  snap install codium
+  snap install rambox
 
   # i3-gaps
   bash ./installers/i3gaps.sh
@@ -92,8 +115,14 @@ else
   # Rofi
   bash ./installers/rofi.sh
 
-  # Tryone compton 
+  # Tryone compton
   bash ./installers/tryone_compton.sh
+
+  # Reset MS Mice (Microsoft mouse wheel fixer)
+  # (only on desktop)
+  if [[ $option == "1"  || $option == "2" ]]; then
+    bash ./installers/resetmsmice.sh
+  fi
 
   # Done
   echo "It's done! :)"

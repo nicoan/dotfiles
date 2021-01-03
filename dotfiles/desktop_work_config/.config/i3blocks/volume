@@ -1,13 +1,13 @@
 #!/bin/bash
-VOLUME_PERCENT=$(amixer sget Master | grep 'Mono:' | awk -F'[][]' '{ print $2 }')
+VOLUME_PERCENT=$(amixer sget Master | grep 'Right:' | awk -F'[][]' '{ print $2 }')
 NUMBER_PERCENT=$(echo "${VOLUME_PERCENT//%}")
 
 function get_volume_icon {
-  if [ $NUMBER_PERCENT -gt 75 ]; then
+  if [[ $NUMBER_PERCENT -gt 75 ]]; then
     echo -n ""
-  elif [ $NUMBER_PERCENT -gt 25 ]; then
+  elif [[ $NUMBER_PERCENT -gt 25 ]]; then
     echo -n ""
-  elif [ $NUMBER_PERCENT -gt 1 ]; then
+  elif [[ $NUMBER_PERCENT -gt 1 ]]; then
     echo -n ""
   else
     echo -n ""

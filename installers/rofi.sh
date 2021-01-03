@@ -15,9 +15,13 @@ mkdir build
 cd build
 cd ..
 
-
-sudo apt install -y bison flex libxcb-ewmh-dev librsvg2-dev texinfo
-
+# Dependencies
+sudo apt install -y bison \
+  flex \
+  libxcb-ewmh-dev \
+  librsvg2-dev \
+  texinfo \
+  libtool
 
 # Install lastest check (0.10.0 available in ubuntu 18.04)
 git clone https://github.com/libcheck/check.git /tmp/check

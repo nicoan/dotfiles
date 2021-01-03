@@ -2,7 +2,6 @@
 ## run while loop to display date and hostname on screen ##
 while [ : ]
 do
-    sleep 55m 
+    sleep 60m
     xcowsay -t 300 "Mooooooove for 5 minutes."
 done
-
