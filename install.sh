@@ -84,6 +84,7 @@ else
     ripgrep \
     udiskie \
     lxpolkit \
+    blueman \
 
   # Snaps
   snap install core
