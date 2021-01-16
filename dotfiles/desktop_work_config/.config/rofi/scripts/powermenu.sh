@@ -1,8 +1,13 @@
-#!/usr/bin/env bash
+#!/bin/bash
+function peaceful-close-apps {
+  for win in $(wmctrl -l | awk '{print $1}'); do
+    wmctrl -i -c $win
+  done
+}
 
 options="
 
-
+
 "
 themes_dir=$HOME/.config/rofi/themes
 theme=${1:-$themes_dir/powermenu.rasi}
@@ -12,9 +17,13 @@ echo "This is your selection: $selection"
 
 case "${selection}" in
     "")
-        systemctl poweroff -i;;
+        peaceful-close-apps
+        systemctl poweroff -i
+      ;;
     "")
-        systemctl reboot;;
+        peaceful-close-apps
+        systemctl reboot
+      ;;
     "")
         i3-msg exit;;
     "")

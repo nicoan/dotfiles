@@ -357,7 +357,8 @@ exec --no-startup-id /usr/bin/gnome-keyring-daemon --start --components=secrets
 exec --no-startup-id rambox
 exec --no-startup-id firefox
 exec --no-startup-id gtk-redshift
-exec --no-startup-id $HOME/.bin/standReminder
+exec --no-startup-id blueman-applet
+exec --no-startup-id $HOME/.local/bin/standReminder
 
 # Change wallapaper
 exec --no-startup-id feh --randomize --bg-fill $HOME/Pictures/Wallpapers/*

@@ -115,8 +115,6 @@ if [ -n "$force_color_prompt" ]; then
   fi
 fi
 
-PATH="$HOME/.bin:$PATH"
-
 # #################
 #      Prompt
 # #################

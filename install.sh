@@ -85,6 +85,7 @@ else
     udiskie \
     lxpolkit \
     blueman \
+    wmctrl \
 
   # Snaps
   snap install core
@@ -94,7 +95,6 @@ else
   snap disconnect keepassxc:network-bind :network-bind
 
   snap install rambox
-  snap install thunderbird
   snap install codium
   snap install rambox
 
