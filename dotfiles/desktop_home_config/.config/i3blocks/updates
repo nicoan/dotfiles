@@ -7,12 +7,12 @@ fi
 
 updates_text=""
 if [[ ! "$updates" -eq "0" ]]; then
-    updates_text="   $updates "
+    updates_text="<span font_desc='Font Awesome 5 Free 10' rise='3500'>  </span><span font_desc='Comfortaa Bold 10' rise='3500'> $updates  </span>"
 fi
 
 security_updates_text=""
 if [[ ! "$security_updates" -eq "0" ]]; then
-    security_updates_text=" $security_updates "
+    security_updates_text="<span font_desc='Font Awesome 5 Free 10' rise='3500'>  </span><span font_desc='Comfortaa Bold 10' rise='3500'>$security_updates  </span>"
 fi
 
 separator=""
@@ -21,4 +21,4 @@ if [[ ! "$updates" -eq "0" ]] && [[ ! "$security_updates" -eq "0" ]]; then
 fi
 
 
-echo -n "<span font_desc='Comfortaa Bold 10'> $updates_text$separator$security_updates_text </span>"
+echo -n "$updates_text$separator$security_updates_text"

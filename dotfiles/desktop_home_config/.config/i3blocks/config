@@ -61,7 +61,7 @@ border=#A054A3
 
 # Date Time
 [time]
-command=echo "<span font_desc='Comfortaa Bold 10'>   $(date '+%H:%M')   </span>"
+command=echo -n "<span font_desc='Font Awesome 5 Free 10' rise='3500'>   </span><span font_desc='Comfortaa Bold 10' rise='3500'>$(date '+%H:%M')   </span>"
 interval=5
 markup=pango
 border=#d33682
