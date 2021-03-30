@@ -123,11 +123,18 @@ git_branch() {
   [[ ! -z "$BRANCH" ]] && echo -e "──[\e[1;35m${BRANCH}\e[0;34m]" || echo ""
 }
 
+# Promp Styling
 PS1="\n\[\e[0;34m\]┌─[\[\e[1;36m\u\e[1;35m\]@\[\e[1;36m\]${HOSTNAME%%.*}\[\e[0;34m\]]──[\e[1;35m\]\$\e[0;34m\]]──[\e[1;37m\w\e[0;34m]\$(git_branch)\[\e[0;34m\] \[\e[0;34m\]\n\[\e[0;34m\]└────╼ \[\e[1;35m\]» \[\e[00;00m\]"
+
+# Disable Bell
+if [ -n "$DISPLAY" ]; then
+  xset b off
+fi
 
 # Environment variables
 export SCRIPTS_DIR=$HOME/.config/i3blocks
 export THELOUNGE_HOME=$HOME/.config/thelounge
+export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git'
 
 # Bash configurations
 source $HOME/.config/bash-imports/git-aliases.sh

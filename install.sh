@@ -17,6 +17,7 @@ if [ "$1" != "sudo" ]; then
   FONT_DIR=$HOME/.fonts/
   CONFIG_DIR=$HOME/.config/
   EXECUTABLES_DIR=$HOME/.local/bin/
+  GENERAL_CONFIGS="general"
 
   # Create directories
   echo "Creating directories..."
@@ -38,6 +39,7 @@ if [ "$1" != "sudo" ]; then
   cp "$CURRENT_DIR/$DEVICE_CONFIG_DIR/.Xresources" "$HOME/.Xresources"
   cp "$CURRENT_DIR/$DEVICE_CONFIG_DIR/.bashrc" "$HOME/.bashrc"
   cp "$CURRENT_DIR/$DEVICE_CONFIG_DIR/.profile" "$HOME/.profile"
+  cp -rf "$CURRENT_DIR/$GENERAL_CONFIGS/." "$HOME/.config/"
   cp -rf "$CURRENT_DIR/.bin/." "$EXECUTABLES_DIR"
   bash "$CURRENT_DIR/fonts/install.sh"
 

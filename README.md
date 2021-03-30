@@ -17,6 +17,8 @@ The install script is made for debian or debian-based systems (with apt).
   - Papirus Icon theme
   - Dmenu configuration
   - Rofi configuration
+  - NeoVIM config
 
 ## Screenshot
 ![Preview](https://raw.githubusercontent.com/nicoan/dotfiles/master/screen.png)
+![Preview](https://raw.githubusercontent.com/nicoan/dotfiles/master/vim.png)
