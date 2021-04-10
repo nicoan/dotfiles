@@ -1,4 +1,4 @@
 #!/bin/bash
-SSID=$(iwgetid -r)
+SSID=$(nmcli -t -f name connection show --active)
 
-echo -n "<span font_desc='Ubuntu 10'>    $SSID   </span>"
+echo -n "<span font_desc='Font Awesome 5 Free 10' rise='3500'>   </span><span font_desc='Comfortaa Bold 10' rise='3500'> $SSID  </span>"

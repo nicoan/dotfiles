@@ -11,4 +11,4 @@ HOME_LETTER+="b"
 ROOT_SPACE=$(echo $ROOT_SPACE | sed 's/.$//')
 HOME_SPACE=$(echo $HOME_SPACE | sed 's/.$//')
 
-echo -n "<span font_desc='Ubuntu 10'>   $ROOT_SPACE $ROOT_LETTER  ~    $HOME_SPACE $HOME_LETTER   </span>"
+echo -n "<span font_desc='Font Awesome 5 Free 10' rise='4500'>   </span><span font_desc='Comfortaa Bold 10' rise='4500'>$ROOT_SPACE $ROOT_LETTER  ~  </span><span font_desc='Font Awesome 5 Free 10' rise='4500'> </span><span font_desc='Comfortaa Bold 10' rise='4500'>$HOME_SPACE $HOME_LETTER</span> "

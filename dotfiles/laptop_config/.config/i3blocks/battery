@@ -1,8 +1,8 @@
 #!/bin/bash
-BATTERY_INFO=$(acpi -b)
+BATTERY_INFO=$(acpi -b | tail -n 1)
 STATUS=$(echo -n $BATTERY_INFO | cut -d ',' -f1 | cut -d ':' -f2 | xargs)
 REMAINING_TIME=$(echo -n $BATTERY_INFO | cut -d ',' -f3 | awk '{print substr($0,1,6) }' | xargs)
-PERCENT=$(echo -n $BATTERY_INFO | cut -d',' -f2)
+PERCENT=$(echo -n $BATTERY_INFO | cut -d ',' -f2)
 NUMBER_PERCENT=$(echo "${PERCENT//%}")
 
 function get_battery_icon {
@@ -35,10 +35,10 @@ function get_battery_text {
 	elif [ "$STATUS" = "Full" ]; then
 		echo -n "Full"
 	elif [ "$STATUS" = "Unknown" ]; then
-		echo -n "Unknown status"
+		echo -n "Charging (US)"
 	else
 		echo -n "$PERCENT ($REMAINING_TIME)"
 	fi
 }
 
-echo -n "<span font_desc='Ubuntu 10'>   $(get_battery_icon) $(get_battery_text)   </span>"
+echo -n "<span font_desc='Font Awesome 5 Free 10' rise='3500'>   $(get_battery_icon) </span><span font_desc='Comfortaa Bold 10' rise='3500'>$(get_battery_text)   </span>"

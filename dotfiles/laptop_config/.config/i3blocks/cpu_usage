@@ -8,4 +8,4 @@
 
 cpu_usage=$[100-$(vmstat 1 2|tail -1|awk '{print $15}')]
 
-echo "<span font_desc='Ubuntu 10'>    $cpu_usage%  </span>"
+echo "<span font_desc='Font Awesome 5 Free 10' rise='2500'>  </span><span font_desc='Comfortaa Bold 10' rise='2000'>$cpu_usage%  </span>"

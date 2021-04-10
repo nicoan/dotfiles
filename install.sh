@@ -88,6 +88,7 @@ else
     lxpolkit \
     blueman \
     wmctrl \
+    meson \
 
   # Snaps
   snap install core

@@ -18,7 +18,7 @@ pop_stash_name() {
 
 alias git-undo-last-commit='git reset HEAD~'
 alias git-stash-name='git stash save "$1"'
-alias git-stash-apply-name=apply_stash_name 
+alias git-stash-apply-name=apply_stash_name
 alias git-stash-pop-name=pop_stash_name
 alias git-clean-modified='git reset && git checkout .'
 alias git-addall-commit="git add . && git commit -m '$1'"

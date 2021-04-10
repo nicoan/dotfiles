@@ -14,8 +14,8 @@
 
 !*font:          xft:Source Code Pro for Powerline:size=11,style=regular
 
-URxvt.font:         xft:SauceCodePro Nerd Font Mono:size=11:antialias=true:style=Regular,xft:Font Awesome 5 Free,Font Awesome 5 Free Regular:style=Regular:size=11
-URxvt.boldFont:     xft:SauceCodePro Nerd Font Mono:bold:size=11:antialias=true:style=Bold
+URxvt.font:         xft:SauceCodePro Nerd Font Mono:size=12:antialias=true:style=Regular,xft:Font Awesome 5 Free,Font Awesome 5 Free Regular:style=Regular:size=12
+URxvt.boldFont:     xft:SauceCodePro Nerd Font Mono:bold:size=12:antialias=true:style=Bold
 
 ! === Colours ===
 
@@ -92,4 +92,4 @@ URxvt*cursorBlink:          true
 ! True trasparency
 urxvt*depth: 32
 !urxvt*background: rgba:0000/0000/0000/eeee
-urxvt*background: rgba:1400/1c00/2100/bbbb
+urxvt*background: rgba:1400/1c00/2100/eeee
