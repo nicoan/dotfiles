@@ -30,6 +30,11 @@
     padding: 45% 0 0 40%;
 }
 
+#error-message {
+    border: 0;
+    padding: 45% 0 0 40%;
+}
+
 #element {
     padding: 25px;
     border: 0px;

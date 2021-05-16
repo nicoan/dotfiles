@@ -192,8 +192,7 @@ assign [title="^Android Emulator -"] $workspace4
 assign [class="jetbrains-idea-ce"] $workspace3
 assign [class="Rambox"] $workspace9
 assign [class="rambox"] $workspace9
-assign [class="Mail"] $workspace8
-assign [class="Thunderbird"] $workspace8
+assign [class="zoom"] $workspace8
 
 # Move to workspace
 for_window [class="Spotify"] move to workspace $workspace10
@@ -359,8 +358,6 @@ exec --no-startup-id $HOME/.config/bash-imports/gnome_ssh_keyring.sh
 exec --no-startup-id /usr/bin/gnome-keyring-daemon --start --components=secrets
 exec --no-startup-id rambox
 exec --no-startup-id firefox
-exec --no-startup-id gtk-redshift
-exec --no-startup-id blueman-applet
 exec --no-startup-id $HOME/.local/bin/standReminder
 
 # Change wallapaper

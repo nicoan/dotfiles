@@ -12,19 +12,19 @@ echo "This is your selection: $selection"
 case "${selection}" in
     "")
         $HOME/.config/rofi/scripts/closeapps.sh
-	rofi -e "Shuting down..." -theme $theme -normal-window
+	rofi -e "Shuting down..." -theme $theme -normal-window &
         sleep 3
         systemctl poweroff -i
       ;;
     "")
         $HOME/.config/rofi/scripts/closeapps.sh
-	rofi -e "Rebooting..." -theme $theme -normal-window
+	rofi -e "Rebooting..." -theme $theme -normal-window &
         sleep 3
         systemctl reboot
       ;;
     "")
         $HOME/.config/rofi/scripts/closeapps.sh
-	rofi -e "Logging out..." -theme $theme -normal-window
+	rofi -e "Logging out..." -theme $theme -normal-window &
         sleep 3
         i3 exit;;
     "")

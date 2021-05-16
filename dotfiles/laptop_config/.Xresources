@@ -9,13 +9,9 @@
 !  * urxvt
 !  * rofi
 
-
 ! === Font ===
-
-!*font:          xft:Source Code Pro for Powerline:size=11,style=regular
-
-URxvt.font:         xft:SauceCodePro Nerd Font Mono:size=12:antialias=true:style=Regular,xft:Font Awesome 5 Free,Font Awesome 5 Free Regular:style=Regular:size=12
-URxvt.boldFont:     xft:SauceCodePro Nerd Font Mono:bold:size=12:antialias=true:style=Bold
+URxvt.font:         xft:SauceCodePro Nerd Font Mono:size=11:antialias=true:style=Regular,xft:Font Awesome 5 Free:style=Regular:size=11
+URxvt.boldFont:     xft:SauceCodePro Nerd Font Mono:bold:size=11:antialias=true:style=Bold,xft:Font Awesome 5 Free:style=Bold:size=11
 
 ! === Colours ===
 
@@ -75,7 +71,6 @@ URxvt.keysym.Shift-Control-C: eval:selection_to_clipboard
 ! === URxvt ===
 
 ! Looks
-! URxvt*font:                     xft:Ubuntu Mono:size=12,style=regular
 URxvt*scrollBar:                false
 URxvt.internalBorder:           10
 ! Clickable urls
@@ -84,7 +79,6 @@ URxvt.url-launcher:             /usr/bin/firefox
 URxvt.matcher.button:           1
 ! Change keybinding for copy/paste
 URxvt*iso14755:                 false
-! URxvt.letterSpace:              -1
 URxvt.lineSpace:                2
 URxvt*cursorUnderline:      false
 URxvt*cursorBlink:          true
