@@ -62,44 +62,23 @@ else
   apt-get update
   apt-get install -y xclip \
     rxvt \
-    compton \
-    feh \
     scrot \
     lm-sensors \
-    redshift \
-    gtk-redshift \
     alsa-utils \
-    pavucontrol \
-    xautolock \
     xbacklight \
     dunst \
-    imagemagick \
     git \
-    vim \
+    neo-vim \
     htop \
     xcowsay \
     build-essential \
     shtool \
     curl\
-    snap \
     wget \
-    ripgrep \
-    udiskie \
-    lxpolkit \
-    blueman \
+    policykit-1-gnome \
+    gnome-flashback \
     wmctrl \
     meson \
-
-  # Snaps
-  snap install core
-
-  snap install keepasssxc
-  snap disconnect keepassxc:network :network
-  snap disconnect keepassxc:network-bind :network-bind
-
-  snap install rambox
-  snap install codium
-  snap install rambox
 
   # i3-gaps
   bash ./installers/i3gaps.sh
@@ -107,8 +86,8 @@ else
   # i3-blocks gaps
   bash ./installers/i3blocks_gaps.sh
 
-  # i3lock-color
-  bash ./installers/i3lock_color.sh
+  # i3 gnome
+  bash ./installers/i3-gnome.sh
 
   # GTK Theme
   bash ./installers/gtk_theme.sh
@@ -119,8 +98,9 @@ else
   # Rofi
   bash ./installers/rofi.sh
 
-  # Tryone compton
-  bash ./installers/tryone_compton.sh
+  # Compositor
+  bash ./installers/picom.sh
+
 
   # Reset MS Mice (Microsoft mouse wheel fixer)
   # (only on desktop)
