@@ -177,7 +177,7 @@ bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
-bindsym $mod+shift+x exec "$HOME/.config/i3/lock_and_blur.sh"
+bindsym $mod+shift+x exec dbus-send --type=method_call --dest=org.gnome.ScreenSaver  /org/gnome/ScreenSaver org.gnome.ScreenSaver.Lock
 
 # Apps in workspaces
 assign [class="Firefox"] $workspace2
@@ -322,46 +322,28 @@ workspace $workspace10 output DP-4
 #    Startup commands
 # ========================
 
-# Adjust output resolution
-exec xrandr --output HDMI-0 --off
-exec xrandr --output DP-4 --right-of DVI-D-0
-exec xrandr --output DP-4 --mode 1280x1024
-
-# Gtk Settings and stuff
-exec_always --no-startup-id /usr/lib/gnome-settings-daemon/gsd-xsettings
-
-# Composite
-exec compton --config $HOME/.config/compton/compton.conf -b --dbus
-
-# Keyboard distribution
-exec setxkbmap -layout latam
-
-# Settings daemon
+# Gnome Settings and stuff
+exec --no-startup-id /usr/bin/gnome-keyring-daemon --start --components=secrets
+exec --no-startup-id /usr/lib/gsd-xsettings
+exec_always --no-startup-id gnome-power-manager
+exec --no-startup-id /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1
+exec --no-startup-id gnome-flashback
 exec gnome-settings-daemon
 
-# AutoMount devices daemon
-exec --no-startup-id udiskie
+# Composite
+exec picom --experimental-backend -b --dbus
 
-# Authentication agent (prompt root password dialog when needed)
-exec --no-startup-id lxpolkit
-
-# Blue light filter
-exec --no-startup-id redshift -O 3500K
-
-# Autolock service
-# exec xautolock -detectsleep -time 5 -locker $HOME/.config/i3/lock_and_blur.sh \
-#  -notify 30 \
-#  -notifier "notify-send -u critical -t 10000 -- 'Locking screen in 30 seconds'"
+# Keyboard distribution
+exec setxkbmap latam
 
 # Autoexec applications
-exec --no-startup-id $HOME/.config/bash-imports/gnome_ssh_keyring.sh
-exec --no-startup-id /usr/bin/gnome-keyring-daemon --start --components=secrets
+# exec --no-startup-id $HOME/.config/bash-imports/gnome_ssh_keyring.sh
 exec --no-startup-id rambox
 exec --no-startup-id firefox
 exec --no-startup-id $HOME/.local/bin/standReminder
 
 # Change wallapaper
-exec --no-startup-id feh --randomize --bg-fill $HOME/Pictures/Wallpapers/*
+exec gsettings set org.gnome.desktop.background picture-uri "$(echo "file://$HOME/Pictures/Wallpapers/$(ls $HOME/Pictures/Wallpapers | shuf -n 1)")"
 
 # Select default workspaces
 exec --no-startup-id i3-msg workspace $workspace1
