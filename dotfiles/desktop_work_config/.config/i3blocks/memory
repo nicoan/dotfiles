@@ -1,7 +1,0 @@
-#!/bin/bash
-
-FREE_MEMORY=`free | grep Mem | awk '{ printf("%.2f\n", $3 / (1024 * 1024)) }'`
-TOTAL_MEMORY=`free | grep Mem | awk '{ printf("%.0f\n", $2 / (1024 * 1024)) }'`
-
-echo "<span font_desc='Font Awesome 5 Free 10' rise='3500'>   </span><span font_desc='Comfortaa Bold 10' rise='3500'>$FREE_MEMORY Gb / $TOTAL_MEMORY Gb   </span>"
-

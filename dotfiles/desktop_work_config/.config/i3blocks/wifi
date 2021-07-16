@@ -1,4 +1,0 @@
-#!/bin/bash
-SSID=$(iwgetid -r)
-
-echo -n "<span font_desc='Comfortaa Bold 10'>    $SSID  </span>"

@@ -1,6 +1,0 @@
-configuration {
-	modi: "ssh,window,drun,run";
-	columns: 1;
-	font: "Ubuntu 11";
-	hide-scrollbar: true;
-}
