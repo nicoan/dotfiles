@@ -1,2 +1,0 @@
-#!/bin/bash
-chromium --password-store=gnome &> /dev/null &

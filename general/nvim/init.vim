@@ -67,7 +67,12 @@ call plug#begin('~/.config/nvim/plug')
 " Plug 'maxmellon/vim-jsx-pretty'
 " Plug 'peitalin/vim-jsx-typescript'
 " Plug 'leafgarland/typescript-vim' " TypeScript syntax
-"
+
+" Prevent caps
+Plug 'suxpert/vimcaps'
+
+" Jinja templates coloring
+Plug 'Glench/Vim-Jinja2-Syntax'
 
 " Multiple cursors
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}
@@ -75,14 +80,15 @@ Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 " Buffer managment
 Plug 'moll/vim-bbye', {'branch': 'master'}
 
-" NerdTREE (Files)
+" NerdTREE (Files tree)
 Plug 'preservim/nerdtree' " NerdTREE
+
 " Tree dev icons
 Plug 'ryanoasis/vim-devicons'
 Plug 'vwxyutarooo/nerdtree-devicons-syntax'
 
 " Comment plugin
-Plug 'preservim/nerdcommenter' "NerdCommenter
+Plug 'preservim/nerdcommenter' " NerdCommenter
 
 " Find in files
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
@@ -99,6 +105,7 @@ else
   Plug 'mhinz/vim-signify', { 'branch': 'legacy' }
 endif
 Plug 'tpope/vim-fugitive'
+
 call plug#end()
 
 " =======================
@@ -158,10 +165,12 @@ let g:airline_symbols.linenr = ''
 " =======================
 "        NERDTree
 " =======================
-" autocmd vimenter * NERDTree
-" autocmd StdinReadPre * let s:std_in=1
-" autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
-" autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+autocmd vimenter * NERDTree
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+autocmd VimEnter * wincmd p
+" Do not focus NerdTREE on start
+" autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 let g:NERDTreeDirArrows = 1
 let g:NERDTreeDirArrowExpandable = '▸'
 let g:NERDTreeDirArrowCollapsible = '▾'

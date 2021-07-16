@@ -59,5 +59,5 @@ fi
 # Environment variables
 export SCRIPTS_DIR=$HOME/.config/i3blocks
 export THELOUNGE_HOME=$HOME/.config/thelounge
-export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git'
+export FZF_DEFAULT_COMMAND="rg --files --hidden --follow --glob '!.git'"
 

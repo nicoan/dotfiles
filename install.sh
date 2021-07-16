@@ -1,12 +1,10 @@
 #!/bin/bash
 if [ "$1" != "sudo" ]; then
-  echo -e "Choose an installing option:\n1) Desktop Work\n2) Desktop Home\n3) Laptop"
+  echo -e "Choose an installing option:\n1) Desktop \n2) Laptop"
   read option
   if [ $option == "1" ]; then
-    DEVICE_CONFIG_DIR="dotfiles/desktop_work_config"
+    DEVICE_CONFIG_DIR="dotfiles/desktop_config"
   elif [ $option == "2" ]; then
-    DEVICE_CONFIG_DIR="dotfiles/desktop_home_config"
-  elif [ $option == "3" ]; then
     DEVICE_CONFIG_DIR="dotfiles/laptop_config"
   else
     echo "Invalid option"
@@ -68,6 +66,7 @@ else
     dunst \
     git \
     neo-vim \
+    ripgrep \
     htop \
     xcowsay \
     build-essential \
@@ -103,7 +102,7 @@ else
 
   # Reset MS Mice (Microsoft mouse wheel fixer)
   # (only on desktop)
-  if [[ $option == "1"  || $option == "2" ]]; then
+  if [ $option == "1"  ]; then
     bash ./installers/resetmsmice.sh
   fi
 

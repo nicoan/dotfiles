@@ -1,7 +1,7 @@
 #!/bin/bash
 # Ask for sudo
 if [ $EUID != 0 ]; then
-    sudo "$0" "$USER"
+    sudo "$0" "$@"
     exit $?
 fi
 
@@ -11,9 +11,10 @@ set -eu
 apt update
 apt upgrade -y
 
-# Cleanup
-bash /home/$1/.local/bin/removeSnaps
-bash /home/$1/.local/bin/cleanupDeb
+#Cleanup packages
+apt remove -y --purge
+apt autoremove -y --purge
 
 # Notify i3blocks the update is done
 pkill -RTMIN+12 i3blocks
+

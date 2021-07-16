@@ -337,7 +337,6 @@ exec picom --experimental-backend -b --dbus
 exec setxkbmap latam
 
 # Autoexec applications
-# exec --no-startup-id $HOME/.config/bash-imports/gnome_ssh_keyring.sh
 exec --no-startup-id rambox
 exec --no-startup-id firefox
 exec --no-startup-id $HOME/.local/bin/standReminder
